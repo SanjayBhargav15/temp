@@ -1,0 +1,23 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-12.col-md-8
+
+      each dish in dishes
+        .card
+          .card-block
+            h4
+              a(href='/menu/')= dish.name
+              small &nbsp;
+                +outputRating(dish.rating)
+            p.description= dish.description
+            p.price= dish.price
+    .col-12.col-md-4
+      p.lead= sidebarContent

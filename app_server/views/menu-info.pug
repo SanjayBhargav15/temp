@@ -1,0 +1,24 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+  .row
+    .col-12.col-lg-9
+      .row
+        .col-12.col-md-6
+          p.rating
+            +outputRating(dish.rating)
+          p Dish Name: #{dish.name}
+          p Description: #{dish.description}
+          p Price: $#{dish.price}
+      .row
+        .col-12
+          // Add any additional information about the menu item here
+    .col-12.col-lg-3
+      p.lead #{dish.name} #{sidebar.context}
+      p= sidebar.callToAction
+
