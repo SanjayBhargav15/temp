@@ -12,21 +12,21 @@ const menulist = function(req, res){
         {
           name: 'Veg Burgar',
           description: 'A tasty combination of spicy Burgar, pasta, and sauce.',
-          price: '$15.99',
+          price: '₹15.99',
           rating: 4,
           image: '/images/burgar.jpg'
         },
         {
           name: 'Margherita Pizza',
           description: 'A classic pizza with tomato, mozzarella, and basil.',
-          price: '$10.99',
+          price: '₹10.99',
           rating: 4.5,
           image: '/images/pizza.jpg'
         },
         {
           name: 'Chocolate Brownie Sundae',
           description: 'A delightful dessert with warm brownie, vanilla ice cream, and chocolate sauce.',
-          price: '$8.99',
+          price: '₹8.99',
           rating:4.7,
           image: '/images/choco.jpg'
         }
