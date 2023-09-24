@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+/* @import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
 
 body {
   font-family: "Cabin", Arial, sans-serif;
@@ -31,7 +31,7 @@ h1 small {
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #f6dfae;
 }
 
 .card-primary {
@@ -77,4 +77,83 @@ h4 small {
 
 legend {
   font-family: 'Lobster', cursive;
+}
+
+ */
+
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  color: #000000;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+}
+
+.navbar {
+  background-color: #ff0000;
+  border-color: #d69c9cab;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  color: #ffffff; /* White font color */
+}
+
+.banner {
+  margin-top: 4em;
+  border-bottom: 1px solid #2ac9db;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+h1 small {
+  color: #aaa;
+}
+
+.card {
+  background-color: #ffffff; /* White cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width :auto;
+}
+.card-primary {
+  border-color: #a2ced3;
+  margin-bottom: 1rem;
+}
+
+.review-header {
+  background-color: #31727a;
+  color: #ffffff; /* White font color */
+  padding: 0.5em 1em; /* Add padding */
+  margin-bottom: 0.5em;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.review {
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  background-color: #ad1d28;
+  border-color: #911821;
+}
+
+.btn-primary:hover {
+  background-color: #911821; /* Darker red on hover */
+}
+
+legend {
+  font-family: 'Lobster', cursive;
+}
+
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; 
+  object-fit: cover; 
+  height: 150px; 
+  width: 100%;
 }
