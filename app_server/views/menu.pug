@@ -1,25 +1,53 @@
+//- extends layout
+
+//- include _includes/sharedHTMLfunctions
+
+//- block content
+//-   .row.banner
+//-     .col-12.col-md-8
+//-       h1= pageHeader.title
+//-         small &nbsp;#{pageHeader.strapline}
+//-   .row
+//-     .col-12.col-md-6
+
+//-       each dish in dishes
+//-         .card
+//-           .card-block
+//-             h4
+//-               a(href='/menu/')= dish.name
+//-               small &nbsp;
+//-                 +outputRating(dish.rating)
+//-             img(src=dish.image, alt=dish.name, width="100",height="150") 
+//-             p.description= dish.description
+//-             p.price= dish.price
+//-             p.category= dish.category
+//-     .col-12.col-md-4
+//-       p.lead= sidebarContent
+
 extends layout
 
 include _includes/sharedHTMLfunctions
 
 block content
-  .row.banner
-    .col-12.col-md-6
-      h1= pageHeader.title
-        small &nbsp;#{pageHeader.strapline}
-  .row
-    .col-12.col-md-8
-
+  .container
+    .row.banner
+      .col-12.col-md-8
+        h1= pageHeader.title
+          small &nbsp;#{pageHeader.strapline}
+    .row
       each dish in dishes
-        .card
-          .card-block
-            h4
-              a(href='/menu/')= dish.name
-              small &nbsp;
-                +outputRating(dish.rating)
-            img(src=dish.image, alt=dish.name, width="100",height="150") 
-            p.description= dish.description
-            p.price= dish.price
-            p.category= dish.category
-    .col-12.col-md-4
-      p.lead= sidebarContent
+        .col-md-6
+          .card.mb-4
+            .card-body
+              h4.card-title
+                a(href='/menu')= dish.name
+                small &nbsp;
+                  +outputRating(dish.rating)
+              a(href='/menu')
+                img.card-img-top(src=dish.image, alt=dish.name)
+              p.card-text= dish.description
+              p.card-text Price: ₹#{dish.price}
+              p.card-text Category: #{dish.category}
+      .col-md-6
+        p.lead= sidebarContent
+
