@@ -4,7 +4,7 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = 'https://sanjay.cyclic.cloud/';
+  apiOptions.server = 'https://witch.cyclic.cloud';
 }
 
 
