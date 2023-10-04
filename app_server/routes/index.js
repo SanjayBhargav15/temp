@@ -5,7 +5,7 @@ const ctrlmenu = require('../controllers/menuitems');
 const ctrlothers = require('../controllers/others');
 
 /* menuItems pages */
-router.get('/', ctrlmenu.menulist);
+router.get('/', ctrlmenu.menuList);
 router.get('/menu', ctrlmenu.menuInfo);
 router.get('/menu/review/new', ctrlmenu.addReview);
 

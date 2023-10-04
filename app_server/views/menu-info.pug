@@ -1,41 +1,3 @@
-//- extends layout
-
-//- include _includes/sharedHTMLfunctions
-
-//- block content
-//-   .row.banner
-//-     .col-12
-//-       h1= pageHeader.title
-//-   .row
-//-     .col-12.col-lg-9
-//-       .row
-//-         .col-12.col-md-6
-//-           p.rating
-//-             +outputRating(dish.rating)
-//-           p Dish Name: #{dish.name}
-//-           p Description: #{dish.description}
-//-           p Price: $#{dish.price}
-//-           p Availability: #{dish.availability ? 'Available' : 'Not Available'}
-//-       .row
-//-         .col-12
-//-           .card.card-primary.review-card
-//-             .card-block
-//-               a.btn.btn-primary.float-right(href='/menu/review/new') Add review
-//-               h2.card-title Customer reviews
-//-               each review in dish.reviews
-//-                 .row.review
-//-                   .col-12.no-gutters.review-header
-//-                     span.rating
-//-                       +outputRating(review.rating)
-//-                     span.reviewAuthor #{review.author}
-//-                     small.reviewTimestamp #{review.createdOn}
-//-                   .col-12
-//-                     p !{(review.reviewText).replace(/\n/g, '<br/>')}
-//-     .col-12.col-lg-3
-//-       p.lead #{dish.name}           
-//-       img(src=dish.image, alt=dish.name, width="250") 
-//-       p= sidebar.callToAction
-
 extends layout
 
 include _includes/sharedHTMLfunctions
@@ -46,7 +8,6 @@ block content
       h1= pageHeader.title
   .row
     .col-12.col-lg-14
-      // Image Section
       .row
         .col-12
           .image-container
@@ -58,7 +19,6 @@ block content
               p Description: #{dish.description}
               p Price: ₹#{dish.price}
               p Availability: #{dish.availability ? 'Available' : 'Not Available'}
-      // Reviews Section
       .row
         .col-12
           .card.card-primary.review-card
