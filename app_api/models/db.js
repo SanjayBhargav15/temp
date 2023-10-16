@@ -1,17 +1,12 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 
-const dbURL = 'mongodb+srv://sanjay:qZyMOVSYvkgft48V@cluster0.8wsu9j8.mongodb.net/?retryWrites=true&w=majority';
-mongoose.connect(dbURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+let dbURL = 'mongodb://127.0.0.1/restaurant';
+if (process.env.NODE_ENV === 'production') {
+  dbURL = process.env.DB_HOST || process.env.MONGODB_URI;
+}
 
-});
-
-var message = "mongodb+srv://sanjay:qZyMOVSYvkgft48V@cluster0.8wsu9j8.mongodb.net/?retryWrites=true&w=majority"
-if (dbURI == "mongodb://127.0.0.1/restaurant"){
-    message = 'MongoDB connected at:mongodb://127.0.0.1/restaurant'
-  }
+mongoose.connect("mongodb://127.0.0.1:27017/restaurant");
 
 
 mongoose.connection.on('connected', () => {
