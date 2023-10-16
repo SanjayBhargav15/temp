@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-mongoose.connect("dbURL");
+mongoose.connect("mongodb+srv://sanjay:qZyMOVSYvkgft48V@cluster0.8wsu9j8.mongodb.net/?retryWrites=true&w=majority");
 
 // const dbURI = "mongodb+srv://sanjay:qZyMOVSYvkgft48V@cluster0.8wsu9j8.mongodb.net/?retryWrites=true&w=majority"
 
