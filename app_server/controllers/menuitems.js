@@ -3,9 +3,9 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 
-// if (process.env.NODE_ENV === 'production') {
-//   apiOptions.server = 'https://sanjay.cyclic.cloud';
-// }
+if (process.env.NODE_ENV === 'production') {
+  apiOptions.server = 'https://sanjay.cyclic.cloud';
+}
 
 const showError = (req, res, status) => {
   let title = '';
@@ -107,5 +107,3 @@ module.exports = {
   menuInfoPage,
   addReview,
 };
-
-
