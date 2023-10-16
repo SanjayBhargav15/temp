@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  .container.mt-5
+    .row
+      .col-md-6.mx-auto
+        .card
+          .card-header
+            h1.text-center Order Form
+          .card-body
+            form(action="/orders", method="post")
+              .form-group
+                label(for="name") Name:
+                input.form-control(type="text", id="name", name="name", placeholder="Enter your name", required)
+              .form-group
+                label(for="phno") Phone Number:
+                input.form-control(type="tel", id="phno", name="phno", placeholder="Enter your phone number", required)
+              .form-group
+                label(for="dish") Dish:
+                select.form-control(id="dish", name="dish", required)
+                  each dish in availableDishes
+                    option(value=dish._id)= dish.name
+              .form-group
+                label(for="quantity") Quantity:
+                input.form-control(type="number", id="quantity", name="quantity", min="1", value="1", placeholder="Enter quantity", required)
+              .form-group
+                label(for="notes") Requirements:
+                textarea.form-control(id="notes", name="notes", placeholder="Enter any special requirements")
+              .form-group
+                label(for="address") Address:
+                textarea.form-control(id="address", name="address", placeholder="Enter your address")
+              .form-group
+                hr
+                label(for="totalPrice") Total Price:
+                input.form-control(type="text", id="totalPrice", name="totalPrice", readonly)
+              .form-group
+                button.btn.btn-primary.btn-block(type="button", id="calculateTotal") Calculate Total Price
+              .form-group
+                button.btn.btn-success.btn-block(type="submit") Place Order
+    
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      var availableDishes = !{JSON.stringify(availableDishes)};
+      var dishPrice = 0;
+
+      function calculateTotalPrice() {
+        var quantity = document.getElementById('quantity').value;
+        var totalPrice = dishPrice * quantity;
+        document.getElementById('totalPrice').value = totalPrice;
+      }
+
+      document.getElementById('dish').addEventListener('change', function() {
+        var selectedDishId = this.value;
+        var selectedDish = availableDishes.find(dish => dish._id === selectedDishId);
+        dishPrice = selectedDish ? selectedDish.price : 0;
+        calculateTotalPrice();
+      });
+
+      document.getElementById('quantity').addEventListener('change', calculateTotalPrice);
+
+      document.getElementById('calculateTotal').addEventListener('click', function() {
+        calculateTotalPrice();
+      });
+
+      // Trigger change event on page load
+      var event = new Event('change');
+      document.getElementById('dish').dispatchEvent(event);
+    });

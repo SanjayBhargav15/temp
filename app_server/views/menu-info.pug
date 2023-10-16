@@ -5,7 +5,7 @@ include _includes/sharedHTMLfunctions
 block content
   .row.banner
     .col-12
-      h1= pageHeader.title
+      h1= dish.name
   .row
     .col-12.col-lg-14
       .row
@@ -13,24 +13,23 @@ block content
           .image-container
             img(src=dish.image, alt=dish.name)
             .details-overlay
-              p.rating
-                +outputRating(dish.rating)
-              p Dish Name: #{dish.name}
+              //- p.rating
+              //-   +outputRating(dish.rating)
               p Description: #{dish.description}
               p Price: ₹#{dish.price}
               p Availability: #{dish.availability ? 'Available' : 'Not Available'}
-      .row
-        .col-12
-          .card.card-primary.review-card
-            .card-block
-              a.btn.btn-primary.float-right(href='/menu/review/new/') Add review
-              h2.card-title Customer reviews
-              each review in dish.reviews
-                .row.review
-                  .col-12.no-gutters.review-header
-                    span.rating
-                      +outputRating(review.rating)
-                    span.reviewAuthor #{review.author}
-                    small.reviewTimestamp #{review.createdOn}
-                  .col-12
-                    p !{(review.reviewText).replace(/\n/g, '<br/>')}
+      //- .row
+      //-   .col-12
+      //-     .card.card-primary.review-card
+      //-       .card-block
+      //-         a.btn.btn-primary.float-right(href='/menu/review/new') Add review
+      //-         h2.card-title Customer reviews
+      //-         each review in dish.reviews
+      //-           .row.review
+      //-             .col-12.no-gutters.review-header
+      //-               span.rating
+      //-                 +outputRating(review.rating)
+      //-               span.reviewAuthor #{review.author}
+      //-               small.reviewTimestamp #{review.createdOn}
+      //-             .col-12
+                    //- p !{(review.reviewText).replace(/\n/g, '<br/>')}

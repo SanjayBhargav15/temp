@@ -6,22 +6,20 @@ block content
   .container
     .row.banner
       .col-12.col-md-8
-        h1 Restaurant
+        h1 SPY Restaurant
           small &nbsp; Where Every Meal Tells a Storye
     .row
-      each dish in dishes
+      each dish in responseBody
         .col-md-6
           .card.mb-4
             .card-body
               h4.card-title
-                a(href='/menu')= dish.name
-                small &nbsp;
-                  +outputRating(dish.rating)
-              a(href='/menu')
+                a(href='/menu/' + dish._id)= dish.name
+                //- small &nbsp;
+                //-   +outputRating(dish.rating)
+              a(href='/menu/' + dish._id)
                 img.card-img-top(src=dish.image)
-              p.card-text= dish.description
               p.card-text Price: ₹#{dish.price}
               p.card-text Category: #{dish.category}
       .col-md-6
         p.lead= sidebarContent
-

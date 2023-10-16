@@ -119,3 +119,37 @@ h1 small {
   color: white;
   backdrop-filter: blur(8px); /* Apply blur effect to the overlay */
 }
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  transition: transform 0.3s ease; /* Smooth transitions */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Enlarge on hover */
+}
+
+.btn-primary {
+  background-color: #ff5733;
+  border-color: #e03a22;
+  transition: transform 0.3s ease; /* Smooth transitions */
+}
+
+.btn-primary:hover {
+  background-color: #e03a22;
+  transform: scale(1.05); /* Enlarge on hover */
+}
+
+.review-header {
+  background-color: #ff5733;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+}
+
+.review {
+  margin-bottom: 1em;
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+}
